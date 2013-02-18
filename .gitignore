@@ -1,0 +1,13 @@
+/.settings/
+/bin/
+/target/
+/software/
+/test-output/
+/build/
+/.classpath
+/.project
+/*.iml
+/.idea/
+/out/
+/*.ipr
+/*.iws
