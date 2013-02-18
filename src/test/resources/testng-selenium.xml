@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="testng-selenium">
+	<test verbose="0" name="unit selenium tests" annotations="JDK">
+		<packages>
+			<package name="be.testing.fet.*" />
+		</packages>
+	</test>
+</suite>

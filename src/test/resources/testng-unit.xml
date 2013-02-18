@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="testng-unit">
+	<test verbose="0" name="unit tests" annotations="JDK">
+		<groups>
+			<run>
+				<exclude name="selenium" />
+			</run>
+		</groups>
+		<packages>
+			<package name="be.testing.*" />
+		</packages>
+	</test>
+</suite>

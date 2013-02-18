@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Class-Path: log4j-1.2.17.jar slf4j-api-1.7.2.jar slf4j-log4j12-1.7.2.j
+ ar jcl-over-slf4j-1.7.2.jar commons-lang-2.6.jar commons-io-2.4.jar c
+ ommons-logging-1.1.1.jar commons-beanutils-1.8.3.jar commons-collecti
+ ons-3.2.1.jar commons-codec-1.7.jar h2-1.3.170.jar commons-dbcp-1.4.j
+ ar commons-pool-1.5.4.jar spring-core-3.2.1.RELEASE.jar spring-aop-3.
+ 2.1.RELEASE.jar aopalliance-1.0.jar spring-beans-3.2.1.RELEASE.jar sp
+ ring-jdbc-3.2.1.RELEASE.jar spring-tx-3.2.1.RELEASE.jar spring-webmvc
+ -3.2.1.RELEASE.jar spring-expression-3.2.1.RELEASE.jar spring-context
+ -3.2.1.RELEASE.jar spring-context-support-3.2.1.RELEASE.jar spring-or
+ m-3.2.1.RELEASE.jar spring-web-3.2.1.RELEASE.jar spring-instrument-3.
+ 2.1.RELEASE.jar spring-security-core-3.1.3.RELEASE.jar spring-securit
+ y-web-3.1.3.RELEASE.jar spring-security-config-3.1.3.RELEASE.jar spri
+ ng-security-taglibs-3.1.3.RELEASE.jar spring-security-acl-3.1.3.RELEA
+ SE.jar jackson-annotations-2.1.1.jar jackson-core-2.1.1.jar jackson-d
+ atabind-2.1.3.jar aspectjrt-1.7.1.jar aspectjweaver-1.7.1.jar cglib-2
+ .2.2.jar asm-3.3.1.jar jstl-1.2.jar hibernate-core-4.1.9.Final.jar an
+ tlr-2.7.7.jar jboss-logging-3.1.0.GA.jar javassist-3.17.1-GA.jar jbos
+ s-transaction-api_1.1_spec-1.0.0.Final.jar dom4j-1.6.1.jar hibernate-
+ jpa-2.0-api-1.0.1.Final.jar hibernate-commons-annotations-4.0.1.Final
+ .jar hibernate-entitymanager-4.1.9.Final.jar
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<security:global-method-security pre-post-annotations="enabled"/>
+	
+	<security:http use-expressions="true" >		
+		<security:form-login login-page="/public/login.htm" default-target-url="/secured/searchOrders.htm" authentication-failure-url="/public/login.htm" />
+		<!--  Some browsers lookup a "favicon.ico" in the root of the application. This can cause problems as being redirected
+			  to the (non existing) favicon.ico after login, or getting a 405 not allowed.
+			  By making this (again non existing) resource public we avoid these problems.
+		 -->
+		<security:intercept-url pattern="/favicon.ico" access="permitAll"/>
+		<security:intercept-url pattern="/index.jsp" access="permitAll" />
+		<security:intercept-url pattern="/favicon.ico" access="permitAll"/>
+		<security:intercept-url pattern="/resources/**" access="permitAll"/>
+		<security:intercept-url pattern="/public/**" access="permitAll"/>
+		
+		<security:intercept-url pattern="/secured/**" access="fullyAuthenticated"/>
+	
+		<security:intercept-url pattern="/**" access="denyAll" />
+		
+		<security:logout logout-success-url="/public/login.htm" logout-url="/logout" invalidate-session="true"/>
+	</security:http>
+	
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="testingUserDetailsService">
+			<security:password-encoder hash="sha-256">
+				<security:salt-source user-property="username"/>
+			</security:password-encoder>
+		</security:authentication-provider>
+	</security:authentication-manager>
+</beans>
