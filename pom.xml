@@ -18,7 +18,7 @@
 		<spring.security.version>3.1.3.RELEASE</spring.security.version>
 		<hibernate.version>4.1.9.Final</hibernate.version>
 
-		<selenium.version>2.29.1</selenium.version>
+		<selenium.version>2.31.0</selenium.version>
 		<selenium.server.name>localhost</selenium.server.name>
 		<selenium.server.port>9876</selenium.server.port>
 
