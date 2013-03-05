@@ -3,7 +3,7 @@ $('document').ready(function(){
 		var module= {};
 		
 		module.init = function(baseUrl){
-			$("#orderdate").datepicker({ altFormat: "ddmmyyyy" });
+			$("#orderdate").datepicker({ altFormat: "ddmmyyyy", dateFormat: "dd/mm/yy" });
 
 			var th = document.createElement("th");
 			var td = document.createElement("td");
