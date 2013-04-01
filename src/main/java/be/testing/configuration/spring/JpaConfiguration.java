@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.hibernate.dialect.H2Dialect;
 import org.hibernate.dialect.Oracle10gDialect;
+import org.hibernate.ejb.HibernateEntityManagerFactory;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,7 +22,9 @@ import be.testing.configuration.spring.profiles.Production;
 import be.testing.configuration.spring.profiles.Tomcat;
 import be.testing.configuration.spring.profiles.TomcatSelenium;
 import be.testing.configuration.spring.profiles.UnitResourceTest;
+import be.testing.configuration.spring.profiles.UnitResourceTestDebug;
 import be.testing.configuration.spring.profiles.UnitSeleniumTest;
+import be.testing.support.StatelessSessionFactoryBean;
 
 /**
  * @author Koen Serneels
@@ -35,6 +38,9 @@ public class JpaConfiguration {
 
 	@Autowired
 	private DataSource dataSource;
+
+	@Autowired
+	private EntityManagerFactory entityManagerFactory;
 
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
@@ -50,8 +56,13 @@ public class JpaConfiguration {
 		return localContainerEntityManagerFactoryBean;
 	}
 
+	@Bean
+	public StatelessSessionFactoryBean statelessSessionSupport() {
+		return new StatelessSessionFactoryBean((HibernateEntityManagerFactory) entityManagerFactory);
+	}
+
 	@Configuration
-	@Profile({ Tomcat.name, UnitResourceTest.name, UnitSeleniumTest.name, TomcatSelenium.name })
+	@Profile({ Tomcat.name, UnitResourceTest.name, UnitResourceTestDebug.name, UnitSeleniumTest.name, TomcatSelenium.name })
 	static class JpaProviderH2Properties {
 		@Bean(name = "jpa.provider.properties")
 		public Properties properties() {

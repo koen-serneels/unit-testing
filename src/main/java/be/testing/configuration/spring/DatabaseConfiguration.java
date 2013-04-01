@@ -21,6 +21,7 @@ import be.testing.configuration.spring.profiles.Production;
 import be.testing.configuration.spring.profiles.Tomcat;
 import be.testing.configuration.spring.profiles.TomcatSelenium;
 import be.testing.configuration.spring.profiles.UnitResourceTest;
+import be.testing.configuration.spring.profiles.UnitResourceTestDebug;
 import be.testing.configuration.spring.profiles.UnitSeleniumTest;
 import be.testing.support.H2IsolationLevelInitializerBean;
 
@@ -81,7 +82,7 @@ public class DatabaseConfiguration {
 	}
 
 	@Configuration
-	@TomcatSelenium
+	@Profile({ TomcatSelenium.name, UnitResourceTestDebug.name })
 	static class H2DatabaseWithConnector {
 		@Bean(initMethod = "start", destroyMethod = "stop")
 		public Server embeddedDatabase() throws SQLException {
